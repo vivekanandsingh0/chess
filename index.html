@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game - Full Featured</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>♔ Chess Game ♚</h1>
+            <div class="header-controls">
+                <button id="darkModeToggle" class="btn-icon" title="Toggle Dark Mode">🌙</button>
+                <button id="soundToggle" class="btn-icon" title="Toggle Sound">🔊</button>
+            </div>
+        </header>
+
+        <div class="game-layout">
+            <!-- Left Panel - Captured Pieces -->
+            <aside class="captured-panel">
+                <h3>Captured Pieces</h3>
+                <div class="captured-section">
+                    <h4>White Captured:</h4>
+                    <div id="whiteCaptured" class="captured-pieces"></div>
+                </div>
+                <div class="captured-section">
+                    <h4>Black Captured:</h4>
+                    <div id="blackCaptured" class="captured-pieces"></div>
+                </div>
+            </aside>
+
+            <!-- Center - Chess Board -->
+            <main class="board-container">
+                <div class="turn-indicator" id="turnIndicator">White to Move</div>
+                <div class="board-wrapper">
+                    <div class="coordinates-vertical">
+                        <span>8</span><span>7</span><span>6</span><span>5</span>
+                        <span>4</span><span>3</span><span>2</span><span>1</span>
+                    </div>
+                    <div class="board-with-coords">
+                        <div id="chessboard" class="chessboard"></div>
+                        <div class="coordinates-horizontal">
+                            <span>a</span><span>b</span><span>c</span><span>d</span>
+                            <span>e</span><span>f</span><span>g</span><span>h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-status" id="gameStatus"></div>
+            </main>
+
+            <!-- Right Panel - Controls & History -->
+            <aside class="control-panel">
+                <div class="controls">
+                    <h3>Game Controls</h3>
+                    <button id="newGameBtn" class="btn">New Game</button>
+                    <button id="undoBtn" class="btn">Undo Move</button>
+                </div>
+                
+                <div class="move-history">
+                    <h3>Move History</h3>
+                    <div id="moveList" class="move-list"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Promotion Modal -->
+    <div id="promotionModal" class="modal">
+        <div class="modal-content">
+            <h2>Promote Pawn</h2>
+            <p>Choose a piece:</p>
+            <div class="promotion-choices" id="promotionChoices"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
